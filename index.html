@@ -7,13 +7,19 @@
   <style>
     body {
       margin: 0;
-      font-family: Arial;
+      font-family: Arial, sans-serif;
     }
 
     nav {
-      background: #333;
+      background: #222;
       color: white;
       padding: 10px;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
     .nav-links {
@@ -33,11 +39,63 @@
 
     .menu-toggle {
       display: none;
-      font-size: 20px;
+      font-size: 22px;
       cursor: pointer;
     }
 
-    /* Mobile */
+    header {
+      background: url('https://upload.wikimedia.org/wikipedia/commons/6/6d/Cagayan_de_Oro_City_skyline.jpg') no-repeat center/cover;
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+    }
+
+    section {
+      padding: 40px 20px;
+    }
+
+    .cards {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      flex: 1;
+      min-width: 250px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .card h3 {
+      margin: 10px;
+    }
+
+    .card p {
+      margin: 10px;
+    }
+
+    footer {
+      background: #222;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 300px;
+      border: none;
+    }
+
+    /* MOBILE */
     @media (max-width: 768px) {
       .nav-links {
         display: none;
@@ -52,32 +110,87 @@
         display: block;
       }
     }
-
-    header {
-      padding: 40px;
-      text-align: center;
-      background: lightgray;
-    }
   </style>
 </head>
 
 <body>
 
 <nav>
-  <span class="menu-toggle">☰</span>
-  <ul class="nav-links">
-    <li><a href="#">Home</a></li>
-    <li><a href="#">About</a></li>
-    <li><a href="#">Tourist Spots</a></li>
-    <li><a href="#">Government</a></li>
-    <li><a href="#">Contact</a></li>
-  </ul>
+  <div class="nav-container">
+    <h2>CDO</h2>
+    <span class="menu-toggle">☰</span>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#tourism">Tourist Spots</a></li>
+      <li><a href="#government">Government</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
 </nav>
 
-<header>
-  <h1>Welcome to Cagayan de Oro City</h1>
+<header id="home">
+  <h1>Welcome to Cagayan de Oro</h1>
   <p>City of Golden Friendship</p>
 </header>
+
+<section id="about">
+  <h2>About the City</h2>
+  <p>
+    Cagayan de Oro is a highly urbanized city in Northern Mindanao known for its vibrant economy,
+    friendly people, and exciting outdoor adventures such as whitewater rafting.
+  </p>
+</section>
+
+<section id="tourism">
+  <h2>Tourist Spots</h2>
+
+  <div class="cards">
+
+    <div class="card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Whitewater_rafting_CDO.jpg">
+      <h3>Whitewater Rafting</h3>
+      <p>Experience thrilling river adventures along the Cagayan River.</p>
+    </div>
+
+    <div class="card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/0/0a/Mapawa_Nature_Park.jpg">
+      <h3>Mapawa Nature Park</h3>
+      <p>A nature park perfect for hiking, camping, and outdoor activities.</p>
+    </div>
+
+    <div class="card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Macahambus_Cave.jpg">
+      <h3>Macahambus Cave</h3>
+      <p>A historical cave with scenic views and rich cultural significance.</p>
+    </div>
+
+  </div>
+</section>
+
+<section id="government">
+  <h2>Local Government</h2>
+  <p>
+    The city government is led by the Mayor and local officials who oversee development,
+    public services, and community welfare.
+  </p>
+</section>
+
+<section id="contact">
+  <h2>Contact & Location</h2>
+
+  <p>Email: info@cagayandeoro.gov.ph</p>
+  <p>Phone: (088) 857-1234</p>
+
+  <iframe 
+    src="https://maps.google.com/maps?q=Cagayan%20de%20Oro&t=&z=13&ie=UTF8&iwloc=&output=embed">
+  </iframe>
+
+</section>
+
+<footer>
+  <p>© 2026 Cagayan de Oro City Website</p>
+</footer>
 
 <script>
 document.querySelector(".menu-toggle").onclick = function() {
