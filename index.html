@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cagayan de Oro City</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial;
+    }
+
+    nav {
+      background: #333;
+      color: white;
+      padding: 10px;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      padding: 0;
+    }
+
+    .nav-links li {
+      margin: 10px;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
+
+    header {
+      padding: 40px;
+      text-align: center;
+      background: lightgray;
+    }
+  </style>
+</head>
+
+<body>
+
+<nav>
+  <span class="menu-toggle">☰</span>
+  <ul class="nav-links">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Tourist Spots</a></li>
+    <li><a href="#">Government</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+</nav>
+
+<header>
+  <h1>Welcome to Cagayan de Oro City</h1>
+  <p>City of Golden Friendship</p>
+</header>
+
+<script>
+document.querySelector(".menu-toggle").onclick = function() {
+  document.querySelector(".nav-links").classList.toggle("active");
+};
+</script>
+
+</body>
+</html>
